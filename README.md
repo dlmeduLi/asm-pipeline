@@ -7,12 +7,6 @@
 ## Config file
 
 ```bash
-#####################################################
-#   IMPORTANT                                                                           #
-#       ref_fa,genome_type[genome_library,genome_name]  #
-#                                                                                                       #
-####################################################
-
 
 # ref genome: ref.fa
 # all chroms in one file
