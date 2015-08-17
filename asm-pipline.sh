@@ -141,8 +141,8 @@ fi
 script_path=`dirname $0`
 chromsize_path="${script_path}/chrom.sizes"
 python_cmd="python2.6"
-rmdump_cmd="${python_cmd} ${script_path}/rmdup.py -s"
-tagmeth_cmd="${python_cmd} ${script_path}/tagmeth.py -s"
+rmdump_cmd="${python_cmd} ${script_path}/rmdup.py -s -q"
+tagmeth_cmd="${python_cmd} ${script_path}/tagmeth.py -s -q"
 asm_cmd="${script_path}/tagmeth.R"
 wigtobigwig_cmd="${script_path}/utils/wigToBigWig"
 bedtobigbed_cmd="${script_path}/utils/bedToBigBed"

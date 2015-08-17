@@ -6,6 +6,7 @@ suppressPackageStartupMessages(library("optparse", quietly=TRUE, verbose=FALSE, 
 suppressPackageStartupMessages(library("ggplot2", quietly=TRUE, verbose=FALSE, warn.conflicts=FALSE))
 suppressPackageStartupMessages(library("reshape2", quietly=TRUE, verbose=FALSE, warn.conflicts=FALSE))
 suppressPackageStartupMessages(library("data.table", quietly=TRUE, verbose=FALSE, warn.conflicts=FALSE))
+suppressPackageStartupMessages(library("tools", quietly=TRUE, verbose=FALSE, warn.conflicts=FALSE))
 
 # asm functions
 
@@ -158,7 +159,7 @@ if(!file.exists(kTagmethPath)){
 }
 
 tagmeth.filenames <- list.files(kTagmethPath)
-filename.base <- strsplit(basename(kTagmethPath), "\\.")[[1]][1]
+filename.base <- file_path_sans_ext(basename(kTagmethPath))
 idx.meth.wig.filename <- paste(filename.base, ".idx.meth.wig", sep = "")
 idx.umeth.wig.filename <- paste(filename.base, ".idx.umeth.wig", sep = "")
 asm.bed.filename <- paste(filename.base, ".asm.bed", sep = "")

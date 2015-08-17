@@ -22,7 +22,7 @@ tagGARe = re.compile('F1/GA')
 
 def SortSam(inBam, outBam):
 	pysam.sort("-n", inBam, outBam)
-
+˚
 def TrimReadSeq(seq, cigar):
 	trimedSeq = ''
 	pos = 0
@@ -127,8 +127,8 @@ def TagMethOfPairedReads(dictPaired, dictRefSeq, bamFile, outFile):
 
 		chrname = bamFile.getrname(pair[0].rname)
 		if(not (chrname in dictRefSeq)):
-			print('\nerror: chrom "' + chrname + '" was not found in the reference sequences')
-			sys.exit(-1)
+			print('\nwarning: chrom "' + chrname + '" was not found in the reference sequences')
+			pass
 		
 		readSeq1 = TrimReadSeq(pair[0].seq, pair[0].cigar)
 		readSeq2 = TrimReadSeq(pair[1].seq, pair[1].cigar)
@@ -200,6 +200,9 @@ def main():
 	parser.add_option('-s', '--sort', 
 						action="store_true", dest="sort", default=False,
 						help='sort the input BAM file before data processing')
+	parser.add_option('-q', '--quiet-mode', 
+						action="store_true", dest="quiet", default=False,
+						help='supress progress update information')
 
 	(options, args) = parser.parse_args()
 	if(len(args) != 2):
@@ -334,13 +337,15 @@ def main():
 		# progress
 
 		readCount += 1
-		sys.stdout.write('\r    read: #%ld' % (readCount))
-		sys.stdout.flush()
+		if not options.quiet :
+			sys.stdout.write('\r    read: #%ld' % (readCount))
+			sys.stdout.flush()
 
 	TagMethOfPairedReads(dictPaired, dictRefSeq, bamFile, outFile)
 	TagMethOfSingleReads(dictSingle, dictRefSeq, bamFile, outFile)
-		
-	sys.stdout.write('\n')
+	
+	if not options.quiet :
+		sys.stdout.write('\n')
 	
 	# release resources
 
