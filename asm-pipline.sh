@@ -231,7 +231,7 @@ fi
 echo "[*] Cleaning up & spliting tagmeth" | tee -a ${log_file}
 current_progress="asm_clean_tagmeth"
 clean_tagmeth_file="./${output_path}/clean.${input_bam_filebase}.tagmeth.csv"
-chr_tagmeth_path="./${output_path}/${input_bam_filebase}.chr.tagmeth.csv"
+chr_tagmeth_path="./${output_path}/${input_bam_filebase}.csv"
 if [ -z ${!current_progress} ]
 then
 	# clean up tagmeth file
@@ -276,7 +276,7 @@ then
 	
 	# save rds files		
 
-	chr_tagmeth_rds_path="./${output_path}/${input_bam_filebase}.chr.tagmeth.rds"
+	chr_tagmeth_rds_path="./${output_path}/${input_bam_filebase}.rds"
 	rm -rf ${chr_tagmeth_rds_path}
 	mkdir -p ${chr_tagmeth_rds_path}	
 	mv ./*.rds "${chr_tagmeth_rds_path}/"	

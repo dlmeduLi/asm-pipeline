@@ -40,8 +40,8 @@ GenerateTagmethIndex <- function(genome, chr.tagmeth, chr.name, chr.pos, params 
   perbase.tagcount$methylated <- rep(0, nrow(perbase.tagcount))
   perbase.tagcount$unmethylated <- rep(0, nrow(perbase.tagcount))
   
-  chr.tagmeth.methylated <- chr.tagmeth[chr.tagmeth$score < params$mscore, ]
-  chr.tagmeth.unmethylated <- chr.tagmeth[chr.tagmeth$score > params$umscore, ]
+  chr.tagmeth.methylated <- chr.tagmeth[chr.tagmeth$score > params$mscore, ]
+  chr.tagmeth.unmethylated <- chr.tagmeth[chr.tagmeth$score < params$umscore, ]
   
   stats <- as.data.frame(table(chr.tagmeth.methylated$mid))
   stats[, 1] <- as.integer(as.character(stats[, 1]))
