@@ -67,7 +67,7 @@ generate_trackhub()
 	echo "</html>" >> ${hub_html}
 	
 	# trackDb.txt
-	trackdb_txt=${genome_type}"/trackDb.txt"
+	trackdb_txt=${trackhub_genome_path}"/trackDb.txt"
 	track_name="${input_bam_filebase}_TagMeth"
 	echo "track ${track_name}" > ${trackdb_txt}
 	echo "superTrack on show" >> ${trackdb_txt}
