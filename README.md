@@ -1,8 +1,8 @@
-# asm-pipline
+# asm-pipeline
 
 ## Usage
 
-> asm-pipline genome.asm.config input.bam
+> asm-pipeline genome.asm.config input.bam
 
 ## Config file
 
