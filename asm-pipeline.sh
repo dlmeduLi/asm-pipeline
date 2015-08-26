@@ -76,9 +76,10 @@ generate_trackhub()
 	echo "html ${hub_html}" >> ${trackdb_txt}
 
 	# subtracks
+	echo "" >> ${trackdb_txt}
 	echo "	track ${input_bam_filebase}_meth" >> ${trackdb_txt}
 	echo "	parent ${track_name}" >> ${trackdb_txt}
-	echo "	bigDataUrl	./data/${tagmeth_index_meth_bw}" >> ${trackdb_txt}
+	echo "	bigDataUrl	./data/`basename ${tagmeth_index_meth_bw}`" >> ${trackdb_txt}
 	echo "	shortLabel	meth" >> ${trackdb_txt}
 	echo "	longLabel	${input_bam_filebase}_meth" >> ${trackdb_txt}
 	echo "	type bigWig" >> ${trackdb_txt}
@@ -91,7 +92,7 @@ generate_trackhub()
 	echo "" >> ${trackdb_txt}	
 	echo "	track ${input_bam_filebase}_unmeth" >> ${trackdb_txt}
 	echo "	parent ${track_name}" >> ${trackdb_txt}
-	echo "	bigDataUrl	./data/${tagmeth_index_umeth_bw}" >> ${trackdb_txt}
+	echo "	bigDataUrl	./data/`basename ${tagmeth_index_umeth_bw}`" >> ${trackdb_txt}
 	echo "	shortLabel	unmeth" >> ${trackdb_txt}
 	echo "	longLabel	${input_bam_filebase}_unmeth" >> ${trackdb_txt}
 	echo "	type bigWig" >> ${trackdb_txt}
@@ -104,7 +105,7 @@ generate_trackhub()
 	echo "" >> ${trackdb_txt}
 	echo "	track ${input_bam_filebase}_asm" >> ${trackdb_txt}
 	echo "	parent ${track_name}" >> ${trackdb_txt}
-	echo "	bigDataUrl	.data/${tagmeth_asm_bb}" >> ${trackdb_txt}
+	echo "	bigDataUrl	./data/`basename ${tagmeth_asm_bb}`" >> ${trackdb_txt}
 	echo "	shortLabel	asm" >> ${trackdb_txt}
 	echo "	longLabel	${input_bam_filebase}_asm" >> ${trackdb_txt}
 	echo "	type bigBed" >> ${trackdb_txt}
