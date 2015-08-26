@@ -84,6 +84,7 @@ generate_trackhub()
 	echo "	longLabel	${input_bam_filebase}_meth" >> ${trackdb_txt}
 	echo "	type bigWig" >> ${trackdb_txt}
 	echo "	visibility hide" >> ${trackdb_txt}
+	echo "	color 3,169,244" >> ${trackdb_txt}
 	echo "	aggregate transparentOverlay" >> ${trackdb_txt}
 	echo "	showSubtrackColorOnUi on" >> ${trackdb_txt}
 	echo "	yLineOnOff on" >> ${trackdb_txt}
@@ -97,6 +98,7 @@ generate_trackhub()
 	echo "	longLabel	${input_bam_filebase}_unmeth" >> ${trackdb_txt}
 	echo "	type bigWig" >> ${trackdb_txt}
 	echo "	visibility hide" >> ${trackdb_txt}
+	echo "	color 139,195,74" >> ${trackdb_txt}
 	echo "	aggregate transparentOverlay" >> ${trackdb_txt}
 	echo "	showSubtrackColorOnUi on" >> ${trackdb_txt}
 	echo "	yLineOnOff on" >> ${trackdb_txt}
@@ -110,6 +112,7 @@ generate_trackhub()
 	echo "	longLabel	${input_bam_filebase}_asm" >> ${trackdb_txt}
 	echo "	type bigBed" >> ${trackdb_txt}
 	echo "	visibility hide" >> ${trackdb_txt}
+	echo "	color 255,193,7" >> ${trackdb_txt}
 	echo "	aggregate transparentOverlay" >> ${trackdb_txt}
 	echo "	showSubtrackColorOnUi on" >> ${trackdb_txt}
 	echo "	yLineOnOff on" >> ${trackdb_txt}
