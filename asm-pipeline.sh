@@ -207,6 +207,17 @@ fi
 echo "[*] Cleaning up reads..." | tee -a ${log_file}
 current_progress="asm_clean_reads"
 clean_bam_filename="./${output_path}/clean.${input_bam_filebase}.bam"
+
+if [ -n  ${key_re} ]
+then
+	rmdump_cmd=${rmdump_cmd}" -k ${key_re} "
+fi
+
+if [ -n ${num_re} ]
+then
+	rmdump_cmd=${rmdump_cmd}" -n ${num_re} "
+fi
+
 if [ -z ${!current_progress} ] 
 then
 	cmd="${rmdump_cmd} -o ${clean_bam_filename} ${input_bam_filename}"
